@@ -6,6 +6,8 @@ This is a community-maintained productivity aid unless and until it is formally 
 
 New to GitHub or Codex? Start with the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md).
 
+Prefer VS Code? See [Using BYU Faculty Productivity From VS Code](docs/VSCODE_WORKFLOW.md).
+
 ## Included Skills
 
 - `$byu-learning-suite` helps inspect, plan, copy, configure, and safely update a Learning Suite course.
@@ -27,9 +29,13 @@ Start a new Codex conversation after installation so the skills are discovered.
 ## Browser Modes
 
 - The ChatGPT desktop app is the recommended beginner path and supports carefully confirmed interactive browser work.
-- Plugin version 0.2 adds an optional Codex CLI mode that launches a dedicated Chrome profile and supports only status, page listing, and structural read-only probing.
+- Plugin version 0.3 adds a Codex CLI mode that launches a dedicated Chrome profile, performs read-only discovery, and runs varied task-specific browser scripts through separate preview and apply phases.
 
 CLI browser mode requires Node.js 22 or newer and Google Chrome. It does not require the ChatGPT Chrome extension. See [Part 6 of the Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md#part-6-prepare-browser-access).
+
+## VS Code
+
+Run Codex CLI in VS Code's integrated terminal to use this plugin. OpenAI's current IDE extension does not load plugins, although the Codex sidebar remains useful for ordinary file work. The [VS Code workflow guide](docs/VSCODE_WORKFLOW.md) includes setup, verification, prompt examples, and the general preview-confirm-apply-verify workflow.
 
 ## Test A Local Clone
 
@@ -59,7 +65,7 @@ Use $byu-kuali-proposals to inventory this proposal folder and build a complianc
 ```text
 .agents/plugins/marketplace.json       Codex marketplace catalog
 plugins/byu-faculty-productivity/      Installable plugin
-  scripts/                             Optional read-only CLI browser tools
+  scripts/                             CLI browser lifecycle and task runner
 scripts/validate_repo.py               Cross-platform validation
 tests/                                 Cross-platform CLI tool tests
 ci/github-actions-validate.yml.example Windows, macOS, and Linux CI template

@@ -84,13 +84,13 @@ export class CdpClient {
     });
   }
 
-  async send(method, params = {}) {
+  async send(method, params = {}, timeoutMs = 10_000) {
     const id = this.nextId++;
     const result = new Promise((resolve, reject) => {
       const timeout = setTimeout(() => {
         this.pending.delete(id);
         reject(new Error(`Chrome command timed out: ${method}`));
-      }, 10_000);
+      }, timeoutMs);
       this.pending.set(id, { resolve, reject, timeout });
     });
     this.socket.send(JSON.stringify({ id, method, params }));
@@ -112,6 +112,30 @@ export async function withPage(target, callback, options = {}) {
   } finally {
     client.close();
   }
+}
+
+export async function evaluateExpression(target, expression, options = {}) {
+  return withPage(target, async (client) => {
+    const result = await client.send("Runtime.evaluate", {
+      expression,
+      awaitPromise: true,
+      returnByValue: true,
+    }, Number(options.timeoutMs) || 60_000);
+    if (result.exceptionDetails) {
+      throw new Error(result.exceptionDetails.exception?.description || "Browser task failed.");
+    }
+    return result.result?.value;
+  }, options);
+}
+
+export async function evaluateFunction(target, task, args = {}, options = {}) {
+  if (typeof task !== "function") throw new Error("Browser task must export a function.");
+  return evaluateFunctionSource(target, task.toString(), args, options);
+}
+
+export async function evaluateFunctionSource(target, functionSource, args = {}, options = {}) {
+  const expression = `(${functionSource})(${JSON.stringify(args)})`;
+  return evaluateExpression(target, expression, options);
 }
 
 export async function probePage(target, options = {}) {

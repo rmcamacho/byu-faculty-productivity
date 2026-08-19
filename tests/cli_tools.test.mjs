@@ -7,7 +7,15 @@ import {
   defaultProfileDir,
   findChromeExecutable,
 } from "../plugins/byu-faculty-productivity/scripts/chrome_session.mjs";
-import { summarizePage } from "../plugins/byu-faculty-productivity/scripts/chrome_cdp.mjs";
+import {
+  evaluateFunction,
+  summarizePage,
+} from "../plugins/byu-faculty-productivity/scripts/chrome_cdp.mjs";
+import {
+  parseRunnerArgs,
+  extractTaskFunctionSource,
+  validateTaskSource,
+} from "../plugins/byu-faculty-productivity/scripts/browser_task_runner.mjs";
 
 test("profile directories are platform-specific and dedicated", () => {
   assert.match(defaultProfileDir("darwin", { HOME: "/sample-home" }), /BYU Faculty Productivity/);
@@ -35,4 +43,38 @@ test("launcher always uses localhost port and dedicated profile", () => {
 test("page summaries omit full URLs and paths", () => {
   const summary = summarizePage({ id: "page-1", title: "Safe Page", url: "https://example.edu/private/path?secret=value" });
   assert.deepEqual(summary, { id: "page-1", title: "Safe Page", origin: "https://example.edu" });
+});
+
+test("browser task runner separates preview and apply flags", () => {
+  assert.deepEqual(
+    parseRunnerArgs(["Course", "task.mjs", "--input", "values.json", "--port", "9333", "--apply"]),
+    {
+      positionals: ["Course", "task.mjs"],
+      flags: { input: "values.json", port: "9333", apply: true },
+    }
+  );
+});
+
+test("browser task runner rejects credential and direct-network access", () => {
+  assert.throws(() => validateTaskSource("document.cookie"), /cookies/);
+  assert.throws(() => validateTaskSource("localStorage.getItem('x')"), /local storage/);
+  assert.throws(() => validateTaskSource("fetch('https://example.test')"), /direct network/);
+  assert.doesNotThrow(() => validateTaskSource("document.querySelector('button').click()"));
+});
+
+test("adaptive evaluation helper is available to the guarded runner", () => {
+  assert.equal(typeof evaluateFunction, "function");
+});
+
+test("task extraction accepts one function and rejects executable module code", () => {
+  const source = "export default async function ({ applyArg }) { return { applyArg }; }";
+  assert.match(extractTaskFunctionSource(source), /^async function/);
+  assert.throws(
+    () => extractTaskFunctionSource("console.log('runs in Node'); export default function () {}"),
+    /only one default-exported function/
+  );
+  assert.throws(
+    () => extractTaskFunctionSource("import fs from 'node:fs'; export default function () {}"),
+    /only one default-exported function/
+  );
 });

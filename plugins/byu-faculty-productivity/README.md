@@ -7,7 +7,9 @@ This portable Codex plugin provides two reusable workflows:
 
 The plugin contains no course IDs, student records, proposal content, passwords, cookies, or browser profiles. Each faculty member supplies their own files and authenticated browser session. BYU work should use the CES ChatGPT Edu identity and follow the current BYU ChatGPT Edu Data Guidelines; identifiable student data must be de-identified unless explicitly approved by the institutional AI Executive Committee.
 
-Version 0.2 adds an optional Codex CLI browser foundation. It launches an isolated Chrome profile on localhost and supports browser status, page listing, and structural read-only probes. CLI mode does not yet apply live changes.
+Version 0.3 adds a general Codex CLI browser workflow. It launches an isolated Chrome profile on localhost, uses read-only probes for discovery, and provides a guarded runner for task-specific browser scripts with separate preview and apply phases. It is designed for varied prompt-driven Learning Suite and Kuali work rather than a fixed catalog of one-off commands.
+
+VS Code users should run Codex CLI in the integrated terminal for these plugin workflows. The Codex IDE sidebar does not currently support plugins. Faculty describe outcomes in natural language; Codex generates the smallest task-specific script needed, previews it, waits for confirmation, applies it, and verifies the result.
 
 ## Design
 
@@ -32,6 +34,7 @@ Both workflows use the same safety pattern:
 
 - “Use `$byu-learning-suite` to compare my prior course with the new shell and draft a setup plan. Do not change anything yet.”
 - “Use `$byu-learning-suite` to review these proposed due dates against the term calendar, preview the changes, and wait for confirmation before saving.”
+- “Use `$byu-learning-suite`. In this course, change Quiz 5's due date to October 14, 2026. Show the current and proposed values, wait for my confirmation before saving, and then verify the saved date.”
 - “Use `$byu-kuali-proposals` to read this solicitation and build a compliance matrix and proposal workspace.”
 - “Use `$byu-kuali-proposals` to compare my local upload files with this Kuali record. Preview any needed replacements but do not apply them yet.”
 
