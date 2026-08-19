@@ -9,9 +9,11 @@ Keep proposal content, budgets, upload files, and the live Kuali record synchron
 
 ## Start With the Workspace
 
-1. Identify the proposal folder, solicitation and amendments, canonical drafts, budget workbook, and current state file.
-2. If the workspace has a local playbook or instructions, read them before changing files or the live record.
-3. Verify date-sensitive sponsor requirements against current official sources when the user asks for current guidance or a deadline could have changed.
+1. Use the BYU CES ChatGPT Edu identity for BYU proposal work, not a personal ChatGPT account.
+2. Before opening proposal files or Kuali, screen for PII, restricted data, HIPAA-protected data, controlled unclassified information, and export-controlled material. Do not access those categories without explicit institutional AI Executive Committee approval; de-identify PII whenever possible.
+3. Identify the proposal folder, solicitation and amendments, canonical drafts, budget workbook, and current state file.
+4. If the workspace has a local playbook or instructions, read them before changing files or the live record.
+5. Verify date-sensitive sponsor requirements against current official sources when the user asks for current guidance or a deadline could have changed.
 
 ## Proposal Workflow
 

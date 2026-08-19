@@ -1,6 +1,6 @@
 ---
 name: byu-learning-suite
-description: Inspect, plan, copy, configure, and safely update a BYU Learning Suite course through an authenticated browser. Use for course-shell setup, syllabus and schedule work, assignment dates or settings, course comparisons, and roster exports. Do not use for grading judgments or sending messages on an instructor's behalf unless explicitly requested.
+description: Inspect, plan, copy, configure, and safely update a BYU Learning Suite course through an authenticated browser. Use for course-shell setup, syllabus and schedule work, assignment dates or settings, and course comparisons. Do not use for grading judgments, personal-account handling of BYU data, or student PII unless institutionally approved.
 ---
 
 # BYU Learning Suite
@@ -10,8 +10,9 @@ Help an instructor turn a current or prior Learning Suite course into a reviewed
 ## Preconditions
 
 - Use an authenticated browser session supplied by the instructor. Never request, record, or distribute BYU passwords, cookies, MFA codes, or browser-profile data.
+- Use the BYU CES ChatGPT Edu identity for BYU work. Do not use a personal ChatGPT account for institutional, teaching, or student data.
 - Identify the target course by visible title, term, section, and URL before proposing any write.
-- Treat rosters, accommodations, grades, and student identifiers as private educational records. Keep them out of plugin files, examples, and shared tutorial artifacts.
+- Treat opening a browser page as data access. Do not inspect or process names, photos, contact details, usernames, NetIDs, student IDs, rosters, grades, accommodations, or individual exceptions unless the institutional AI Executive Committee has explicitly approved that use. De-identify PII whenever possible.
 - If authenticated browser control is unavailable, stop before live work and help the instructor establish it.
 
 ## Workflow
@@ -29,7 +30,7 @@ Help an instructor turn a current or prior Learning Suite course into a reviewed
 
 - For course copy and initial shell setup, read [references/course-setup.md](references/course-setup.md).
 - For schedules, assignments, syllabi, and course comparisons, read [references/course-planning.md](references/course-planning.md).
-- For roster export or individual exceptions, read [references/student-data.md](references/student-data.md).
+- For any request involving rosters, grades, accommodations, individual exceptions, or student identifiers, read [references/student-data.md](references/student-data.md) before opening the relevant file or page.
 
 ## Safety Invariants
 

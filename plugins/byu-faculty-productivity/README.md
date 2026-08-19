@@ -5,7 +5,7 @@ This portable Codex plugin provides two reusable workflows:
 - **BYU Learning Suite:** inspect, plan, copy, configure, and safely update a course through an authenticated browser.
 - **BYU Kuali Proposals:** organize proposal development, synchronize artifacts and budgets, and carefully update a Kuali record.
 
-The plugin contains no course IDs, student records, proposal content, passwords, cookies, or browser profiles. Each faculty member supplies their own files and authenticated browser session.
+The plugin contains no course IDs, student records, proposal content, passwords, cookies, or browser profiles. Each faculty member supplies their own files and authenticated browser session. BYU work should use the CES ChatGPT Edu identity and follow the current BYU ChatGPT Edu Data Guidelines; identifiable student data must be de-identified unless explicitly approved by the institutional AI Executive Committee.
 
 ## Design
 

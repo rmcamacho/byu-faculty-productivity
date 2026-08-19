@@ -8,10 +8,11 @@ Allow 30–45 minutes for software setup. Begin the BYU license request at least
 
 You will install:
 
-1. **Codex**, the AI work environment that will follow the tutorial workflows.
-2. **GitHub CLI**, a small utility that gives Codex permission to download the department's private plugin repository.
-3. **BYU Faculty Productivity**, the plugin containing the Learning Suite and Kuali skills.
-4. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage.
+1. **Codex CLI**, used to install the private department plugin.
+2. **The ChatGPT desktop app**, used for the hands-on browser workflow.
+3. **GitHub CLI**, a small utility that gives Codex permission to download the department's private plugin repository.
+4. **BYU Faculty Productivity**, the plugin containing the Learning Suite and Kuali skills.
+5. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage.
 
 You do **not** need to clone the repository, understand Git branches, or write software.
 
@@ -29,6 +30,14 @@ BYU provides eligible CES faculty and staff access to ChatGPT Edu through its en
 6. After approval, look for both the CES approval message and the OpenAI invitation. If only the CES message arrives, follow the alternate login steps on BYU's license page.
 
 Read the [BYU ChatGPT Edu Data Guidelines](https://ai.byu.edu/chatgpt-edu-data-restrictions-page) before using institutional, student, research, or proposal information.
+
+### Account and data rule for this workshop
+
+Use the **BYU CES ChatGPT Edu account** for BYU teaching, student, research, or proposal work. Do not use a personal Free, Plus, or Pro account for those workflows.
+
+The CES account does not make every kind of data permissible. BYU's current guidelines say personally identifiable information—including names, photos, contact information, usernames, NetIDs, and student or employee ID numbers—must be de-identified unless the institutional AI Executive Committee explicitly approves the use. Restricted data, HIPAA-protected data, and controlled unclassified or export-controlled information also require explicit approval.
+
+Opening a page for AI-assisted browser work can expose its visible content to the tool. Do not open rosters, gradebooks, accommodation records, student exceptions, or proposal pages containing prohibited data during the workshop. Use synthetic or de-identified examples.
 
 ### 1.2 Sign into the BYU account correctly
 
@@ -116,6 +125,16 @@ Optional diagnostic:
 codex doctor --summary
 ```
 
+### Install the ChatGPT desktop app
+
+The command-line interface is useful for installing and verifying the private plugin. The tested path for controlling an authenticated Chrome window is the **ChatGPT desktop app**.
+
+1. Follow the [official desktop app instructions](https://learn.chatgpt.com/docs/app) and install the app for your operating system.
+2. Open the app and sign in with the approved BYU CES ChatGPT Edu account.
+3. Select **Codex** when starting the tutorial workflow.
+
+For this workshop, do not plan on using Codex CLI for the live browser exercise. The CLI can install the marketplace and run the read-only skill verification, but the authenticated Chrome workflow has been pilot-tested in the desktop app.
+
 ## Part 4: Install And Sign Into GitHub CLI
 
 GitHub CLI is required only because the repository is private. It securely supplies your GitHub authorization when Codex downloads the plugin.
@@ -190,11 +209,26 @@ Codex loads newly installed plugin skills only in a **new** chat or CLI session.
 
 The Learning Suite and Kuali workflows need an authenticated browser only when you ask Codex to inspect or change a live site.
 
-1. In the ChatGPT desktop app or Codex plugin browser, open **Plugins**.
-2. Install or enable the **Chrome** browser-control plugin if it is available in your environment.
-3. Open Chrome yourself.
-4. Sign into Learning Suite or Kuali yourself, including BYU multifactor authentication.
-5. Navigate to the course or proposal you intend to use.
+There are two different components:
+
+- **BYU Faculty Productivity** supplies the Learning Suite and Kuali instructions. You installed it with Codex CLI in Part 5.
+- **Chrome browser control** connects the desktop app to your normal Chrome windows. It requires the ChatGPT browser extension.
+
+Use this pilot-tested sequence:
+
+1. Open the **ChatGPT desktop app**, not the ChatGPT website in an ordinary browser tab.
+2. In the desktop app, open **Plugins** and confirm that the required browser capability is installed and enabled.
+3. Open **Settings → Computer use** in the desktop app and install or confirm the ChatGPT browser extension for Chrome.
+4. Quit and reopen both Chrome and the ChatGPT desktop app after installing the extension.
+5. Open Chrome yourself and sign into Learning Suite or Kuali, including BYU multifactor authentication.
+6. Navigate to a safe page that does not show student PII or other prohibited data.
+7. Start a new Codex conversation in the desktop app and run this connection test:
+
+```text
+Use Chrome. List the titles of my open tabs, but do not navigate, click, type, or change anything.
+```
+
+If Chrome is not detected, first confirm that the in-app Browser can open a nonsensitive public page. Then recheck **Settings → Computer use**, restart Chrome and the desktop app, and try the connection test again. Using the in-app Browser is a diagnostic step; it does not provide the signed-in state from your normal Chrome profile.
 
 Never paste a BYU password, Duo code, browser cookie, recovery code, or API token into a prompt. Codex should work through the already authenticated browser session.
 
@@ -308,10 +342,13 @@ codex plugin marketplace upgrade byu-faculty-productivity
 
 ### Browser control cannot see the signed-in page
 
+- Use Codex in the ChatGPT desktop app for this tutorial, not only the CLI or ChatGPT website.
+- In the desktop app, check **Plugins** and **Settings → Computer use**.
+- Confirm the ChatGPT browser extension is installed and enabled in Chrome.
 - Confirm Chrome is open on the correct BYU page.
-- Confirm the Chrome browser-control plugin is installed and enabled.
+- Restart both Chrome and the desktop app after extension installation.
 - Start a new Codex conversation after installing a plugin.
-- Ask Codex to identify the visible page without changing it.
+- Run the read-only open-tab-title test from Part 6.
 - Do not bypass BYU authentication or copy session cookies into Codex.
 
 ### A page or prompt does not match the tutorial
@@ -321,7 +358,10 @@ Stop before clicking a consequential control. Software interfaces change. Ask Co
 ## Privacy And Responsible Use
 
 - Follow BYU policy and the requirements of your unit and data owner.
-- Keep student educational records out of GitHub, shared prompts, screenshots, and tutorial files.
+- Use the BYU CES ChatGPT Edu identity for BYU work, not a personal ChatGPT account.
+- De-identify PII unless the institutional AI Executive Committee has explicitly approved the use.
+- Do not expose restricted, HIPAA-protected, controlled unclassified, or export-controlled information without explicit institutional approval.
+- Keep student educational records out of GitHub, prompts, screenshots, tutorial files, and AI-controlled browser pages unless their use is specifically authorized.
 - Keep confidential proposal drafts, budgets, reviewer information, credentials, and browser data out of the plugin repository.
 - Use synthetic data in demonstrations.
 - Review every proposed change. The instructor or authorized proposal official remains responsible for the final action.
