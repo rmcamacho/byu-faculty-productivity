@@ -11,6 +11,8 @@ __pycache__/
 course-data/
 proposal-data/
 private/
+chrome-profile/
+.byu-ai-browser/
 *.env
 *.snapshot.json
 *roster*.csv
