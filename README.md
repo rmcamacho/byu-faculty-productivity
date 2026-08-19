@@ -13,10 +13,10 @@ Neither skill contains credentials, course identifiers, student records, proposa
 
 ## Install From GitHub
 
-After this repository is published, replace `OWNER/REPOSITORY` with its GitHub location:
+With access to this private repository, add it directly as a Codex marketplace:
 
 ```text
-codex plugin marketplace add OWNER/REPOSITORY --ref main
+codex plugin marketplace add rmcamacho/byu-faculty-productivity --ref main
 codex plugin add byu-faculty-productivity@byu-faculty-productivity
 ```
 
