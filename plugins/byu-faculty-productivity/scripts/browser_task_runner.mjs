@@ -4,7 +4,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-import { evaluateFunction } from "./chrome_cdp.mjs";
+import { evaluateFunctionSource } from "./chrome_cdp.mjs";
 
 const FORBIDDEN_SOURCE = [
   [/(?:document\s*\.\s*)?cookie\b/i, "cookies"],
@@ -47,17 +47,22 @@ export function validateTaskSource(source) {
   }
 }
 
-async function loadTask(taskPath) {
+export function extractTaskFunctionSource(source) {
+  const match = String(source).trim().match(/^export\s+default\s+([\s\S]*?);?\s*$/);
+  if (!match) throw new Error("Task file must contain only one default-exported function.");
+  const functionSource = match[1].trim();
+  if (!/^(?:async\s+)?function(?:\s+[A-Za-z_$][\w$]*)?\s*\(/.test(functionSource)) {
+    throw new Error("Task file must default-export a function declaration.");
+  }
+  validateTaskSource(functionSource);
+  return functionSource;
+}
+
+async function loadTaskSource(taskPath) {
   const resolved = path.resolve(taskPath);
   const source = await fs.readFile(resolved, "utf8");
   validateTaskSource(source);
-  const moduleUrl = `${pathToFileURL(resolved).href}?loaded=${Date.now()}`;
-  const taskModule = await import(moduleUrl);
-  if (typeof taskModule.default !== "function") {
-    throw new Error("Task file must default-export a self-contained function.");
-  }
-  validateTaskSource(taskModule.default.toString());
-  return { task: taskModule.default, resolved };
+  return { functionSource: extractTaskFunctionSource(source), resolved };
 }
 
 async function loadInput(inputPath) {
@@ -84,16 +89,16 @@ async function main() {
     return;
   }
 
-  const { task, resolved } = await loadTask(taskPath);
+  const { functionSource, resolved } = await loadTaskSource(taskPath);
   const inputArg = await loadInput(flags.input);
   const applyArg = Boolean(flags.apply);
   const timeoutMs = Number(flags.timeout || 60_000);
   if (!Number.isInteger(timeoutMs) || timeoutMs < 1_000 || timeoutMs > 300_000) {
     throw new Error("--timeout must be an integer from 1000 to 300000 milliseconds.");
   }
-  const value = await evaluateFunction(
+  const value = await evaluateFunctionSource(
     target,
-    task,
+    functionSource,
     { applyArg, inputArg },
     { port: flags.port, timeoutMs }
   );

@@ -130,7 +130,11 @@ export async function evaluateExpression(target, expression, options = {}) {
 
 export async function evaluateFunction(target, task, args = {}, options = {}) {
   if (typeof task !== "function") throw new Error("Browser task must export a function.");
-  const expression = `(${task.toString()})(${JSON.stringify(args)})`;
+  return evaluateFunctionSource(target, task.toString(), args, options);
+}
+
+export async function evaluateFunctionSource(target, functionSource, args = {}, options = {}) {
+  const expression = `(${functionSource})(${JSON.stringify(args)})`;
   return evaluateExpression(target, expression, options);
 }
 

@@ -13,6 +13,7 @@ import {
 } from "../plugins/byu-faculty-productivity/scripts/chrome_cdp.mjs";
 import {
   parseRunnerArgs,
+  extractTaskFunctionSource,
   validateTaskSource,
 } from "../plugins/byu-faculty-productivity/scripts/browser_task_runner.mjs";
 
@@ -63,4 +64,17 @@ test("browser task runner rejects credential and direct-network access", () => {
 
 test("adaptive evaluation helper is available to the guarded runner", () => {
   assert.equal(typeof evaluateFunction, "function");
+});
+
+test("task extraction accepts one function and rejects executable module code", () => {
+  const source = "export default async function ({ applyArg }) { return { applyArg }; }";
+  assert.match(extractTaskFunctionSource(source), /^async function/);
+  assert.throws(
+    () => extractTaskFunctionSource("console.log('runs in Node'); export default function () {}"),
+    /only one default-exported function/
+  );
+  assert.throws(
+    () => extractTaskFunctionSource("import fs from 'node:fs'; export default function () {}"),
+    /only one default-exported function/
+  );
 });
