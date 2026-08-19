@@ -4,6 +4,8 @@ Portable Codex workflows for BYU Learning Suite course administration and Kuali 
 
 This is a community-maintained productivity aid unless and until it is formally adopted by BYU or a BYU unit. It does not replace university policy, sponsored-project guidance, accessibility requirements, or instructor review.
 
+New to GitHub or Codex? Start with the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md).
+
 ## Included Skills
 
 - `$byu-learning-suite` helps inspect, plan, copy, configure, and safely update a Learning Suite course.
