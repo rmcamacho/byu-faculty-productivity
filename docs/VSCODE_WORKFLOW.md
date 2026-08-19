@@ -77,22 +77,24 @@ The expected interaction is:
 2. Codex reports the current value and a one-change preview.
 3. You review the target and proposed date.
 4. You reply with an explicit confirmation such as `Apply that one change`.
-5. Codex applies the change only if a write-capable authenticated browser tool is available.
+5. Codex uses the shared browser-task runner to apply the approved task script.
 6. Codex reopens or rereads the assignment and reports whether the new date persisted.
 
 Do not treat the first prompt as permission to skip the preview. If the title is duplicated, the term or section is unclear, or related scheduling fields conflict, Codex should stop and ask for clarification.
 
-## Current Browser Limitation
+## How The General Tools Work
 
-The plugin's version 0.2 CLI browser helper is read-only. From VS Code's integrated terminal it can start a dedicated Chrome profile, list pages, and perform a structural probe, but it cannot click, type, save, or submit.
+Version 0.3 is not limited to predefined commands such as `change quiz date`. It provides:
 
-Therefore:
+- a dedicated authenticated Chrome session;
+- read-only page discovery and structural inspection;
+- a guarded runner for small task-specific browser scripts;
+- separate preview and apply phases;
+- post-change verification.
 
-- If the CLI session has only the bundled version 0.2 browser helper, the Quiz 5 prompt must stop after inspection or preview and say that no change was saved.
-- A live change requires a write-capable authenticated browser tool. The currently pilot-tested interactive path is Codex in the ChatGPT desktop app with Chrome browser control.
-- Never work around this limitation by exposing cookies, copying a normal Chrome profile, or enabling arbitrary remote access.
+Codex writes the small task script from the requested outcome and the actual safe page. Faculty interact through prompts and confirmation; they do not need to write JavaScript or run the browser commands themselves. The same framework can support course setup, assignment settings, schedule editing, syllabus work, Kuali field updates, and attachment preparation when the visible interface and the user's authorization permit the action.
 
-This boundary should remain visible in the tutorial until a portable write-capable Learning Suite tool is added and separately tested.
+The runner rejects common attempts to access cookies, browser storage, or make direct network calls. It uses the visible page and native controls. This guardrail does not make every operation permissible: student-data rules and the Kuali certification, routing, approval, and submission boundaries still apply.
 
 ## Useful Prompt Patterns
 
@@ -124,6 +126,6 @@ That is expected with the current IDE extension because it does not support plug
 
 Run `codex plugin list`, confirm the plugin is installed and enabled, then exit Codex and start a new CLI session.
 
-### Codex can inspect but cannot save
+### Codex previews but does not apply
 
-The session has the read-only CLI browser helper. Do not ask it to bypass that boundary. Use the desktop browser-control workflow or wait until the department plugin includes a tested write-capable tool for that operation.
+Confirm that plugin version 0.3 or newer is installed, then make sure the preview identifies the correct target and exact proposed action. Codex must receive an explicit confirmation before it reruns the generated task with `--apply`. If the page changed after preview or the task falls outside the allowed boundaries, Codex should stop rather than apply it.

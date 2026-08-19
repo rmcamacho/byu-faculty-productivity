@@ -7,9 +7,9 @@ This portable Codex plugin provides two reusable workflows:
 
 The plugin contains no course IDs, student records, proposal content, passwords, cookies, or browser profiles. Each faculty member supplies their own files and authenticated browser session. BYU work should use the CES ChatGPT Edu identity and follow the current BYU ChatGPT Edu Data Guidelines; identifiable student data must be de-identified unless explicitly approved by the institutional AI Executive Committee.
 
-Version 0.2 adds an optional Codex CLI browser foundation. It launches an isolated Chrome profile on localhost and supports browser status, page listing, and structural read-only probes. CLI mode does not yet apply live changes.
+Version 0.3 adds a general Codex CLI browser workflow. It launches an isolated Chrome profile on localhost, uses read-only probes for discovery, and provides a guarded runner for task-specific browser scripts with separate preview and apply phases. It is designed for varied prompt-driven Learning Suite and Kuali work rather than a fixed catalog of one-off commands.
 
-VS Code users should run Codex CLI in the integrated terminal for these plugin workflows. The Codex IDE sidebar does not currently support plugins. Natural-language requests are encouraged, but the preview-confirm-write-verification pattern still applies.
+VS Code users should run Codex CLI in the integrated terminal for these plugin workflows. The Codex IDE sidebar does not currently support plugins. Faculty describe outcomes in natural language; Codex generates the smallest task-specific script needed, previews it, waits for confirmation, applies it, and verifies the result.
 
 ## Design
 

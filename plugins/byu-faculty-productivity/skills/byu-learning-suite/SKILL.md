@@ -31,7 +31,7 @@ Help an instructor turn a current or prior Learning Suite course into a reviewed
 - For course copy and initial shell setup, read [references/course-setup.md](references/course-setup.md).
 - For schedules, assignments, syllabi, and course comparisons, read [references/course-planning.md](references/course-planning.md).
 - For any request involving rosters, grades, accommodations, individual exceptions, or student identifiers, read [references/student-data.md](references/student-data.md) before opening the relevant file or page.
-- When the user asks to work from Codex CLI, read [CLI Browser Mode](../../references/cli-browser.md). Version 0.2 CLI mode is read-only: it may start, inspect, and stop the dedicated browser, but it must not apply live course changes.
+- When the user asks to work from Codex CLI, read [CLI Browser Mode](../../references/cli-browser.md). Use read-only probing for discovery and [Adaptive Browser Task Scripts](../../references/browser-task-scripts.md) for varied preview-confirm-apply-verify operations.
 - When the user asks to work from VS Code, read [VS Code Workflow](../../references/vscode-workflow.md) to distinguish the plugin-capable integrated terminal from the IDE sidebar.
 
 ## Safety Invariants

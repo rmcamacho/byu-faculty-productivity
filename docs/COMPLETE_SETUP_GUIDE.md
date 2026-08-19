@@ -12,7 +12,7 @@ You will install:
 2. **The ChatGPT desktop app**, used for the hands-on browser workflow.
 3. **GitHub CLI**, a small utility that gives Codex permission to download the department's private plugin repository.
 4. **BYU Faculty Productivity**, the plugin containing the Learning Suite and Kuali skills.
-5. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage. The desktop path supports interactive work; the optional CLI path is read-only in version 0.2.
+5. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage. The CLI path uses a dedicated profile, preview-first task scripts, and explicit confirmation before writes.
 6. **Visual Studio Code (optional)**, for faculty who want files, a terminal, and Codex in one window.
 
 You do **not** need to clone the repository, understand Git branches, or write software.
@@ -128,7 +128,7 @@ codex doctor --summary
 
 ### Install the ChatGPT desktop app
 
-The **ChatGPT desktop app** is the recommended beginner path and is required for the tutorial's interactive browser exercises. Version 0.2 also offers an optional, read-only CLI browser path described in Part 6.
+The **ChatGPT desktop app** remains the simplest beginner path. Version 0.3 also supports preview-confirm-apply browser tasks through Codex CLI, including Codex CLI in VS Code's integrated terminal, as described in Part 6.
 
 1. Follow the [official desktop app instructions](https://learn.chatgpt.com/docs/app) and install the app for your operating system.
 2. Open the app and sign in with the approved BYU CES ChatGPT Edu account.
@@ -222,9 +222,9 @@ The Learning Suite and Kuali workflows need an authenticated browser only when y
 Choose one of these modes:
 
 - **Desktop mode (recommended for beginners):** connects Codex to Chrome through the ChatGPT desktop app and supports the skill's carefully confirmed interactive workflow.
-- **CLI browser mode (optional, version 0.2):** launches a separate Chrome profile that Codex CLI can list and inspect structurally. It cannot navigate, click, type, submit, or make live changes.
+- **CLI browser mode (version 0.3):** launches a separate Chrome profile for inspection and guarded, task-specific browser automation. Every task previews first and requires explicit confirmation before its apply run.
 
-VS Code's integrated terminal uses the same CLI browser mode. The editor does not change its read-only limitation.
+VS Code's integrated terminal uses the same CLI browser mode.
 
 ### Option A: Desktop mode
 
@@ -253,7 +253,7 @@ Never paste a BYU password, Duo code, browser cookie, recovery code, or API toke
 
 If Chrome browser control is unavailable, the skills can still help with local planning, documents, spreadsheets, and review. They must stop before live browser work.
 
-### Option B: CLI browser mode (read-only)
+### Option B: CLI browser mode
 
 This mode is useful for faculty who prefer Terminal or PowerShell. It does not require the ChatGPT Chrome extension, and it does not use your everyday Chrome profile.
 
@@ -277,13 +277,21 @@ Use $byu-learning-suite in CLI browser mode. Check the prerequisites and start t
 
 A separate Chrome window opens with its own BYU Faculty Productivity profile. Sign into the BYU service yourself, complete multifactor authentication, and navigate to a safe page. Do not paste passwords, Duo codes, cookies, or tokens into Codex.
 
-After checking that the page contains no student PII or other prohibited data, tell Codex:
+After checking that the page contains no student PII or other prohibited data, begin with a read-only inspection:
 
 ```text
 The page is safe for this exercise. List the available page titles and origins, then structurally probe the Learning Suite page. Do not navigate, click, type, or change anything.
 ```
 
-The probe reports limited page structure such as headings, button labels, and element counts. It does not extract the full page, expose cookies, or make changes.
+The probe reports limited page structure such as headings, button labels, and element counts. It does not expose cookies or make changes.
+
+You can then describe varied outcomes in ordinary language. For example:
+
+```text
+Use $byu-learning-suite. In this course, change Quiz 5's due date to October 14, 2026. First show me the current and proposed values. Do not save until I explicitly confirm, and verify the result afterward.
+```
+
+Codex creates a small task-specific script in the workspace and runs it in preview mode. After you inspect the preview, reply with an explicit confirmation such as `Apply that one change`. Codex then runs the same task in apply mode and verifies the result. The framework is general; it is not limited to quiz dates or a fixed list of commands.
 
 When finished, enter:
 
@@ -419,6 +427,13 @@ codex plugin marketplace upgrade byu-faculty-productivity
 - Ask Codex to run the CLI browser status check before starting another session.
 - If port 9222 is already in use, ask Codex to use another local port for start, list, probe, and stop.
 - Never solve a connection problem by enabling remote debugging on your normal Chrome profile.
+
+### CLI browser task previews but does not apply
+
+- Run `codex plugin list` and confirm version 0.3 or newer is installed.
+- Review the preview and give explicit confirmation immediately before the write.
+- If the target page changed after preview, ask Codex to inspect and preview again.
+- Do not ask Codex to bypass safeguards involving cookies, storage, direct network calls, passwords, MFA, prohibited data, or Kuali institutional actions.
 
 ### A page or prompt does not match the tutorial
 
