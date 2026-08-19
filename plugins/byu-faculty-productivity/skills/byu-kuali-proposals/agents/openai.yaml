@@ -1,0 +1,4 @@
+interface:
+  display_name: "BYU Kuali Proposals"
+  short_description: "Prepare and safely update BYU Kuali proposals."
+  default_prompt: "Use $byu-kuali-proposals to prepare materials or safely update my proposal."

@@ -1,0 +1,20 @@
+{
+  "name": "byu-faculty-productivity",
+  "interface": {
+    "displayName": "BYU Faculty Productivity"
+  },
+  "plugins": [
+    {
+      "name": "byu-faculty-productivity",
+      "source": {
+        "source": "local",
+        "path": "./plugins/byu-faculty-productivity"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

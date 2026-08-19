@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+Desktop.ini
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+.vscode/
+
+# Never commit local course or proposal data.
+course-data/
+proposal-data/
+private/
+*.env
+*.snapshot.json
+*roster*.csv

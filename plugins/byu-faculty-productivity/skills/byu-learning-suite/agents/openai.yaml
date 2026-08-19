@@ -1,0 +1,4 @@
+interface:
+  display_name: "BYU Learning Suite"
+  short_description: "Plan and safely update BYU Learning Suite courses."
+  default_prompt: "Use $byu-learning-suite to inspect, plan, or safely update my course."
