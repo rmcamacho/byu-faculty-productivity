@@ -2,7 +2,7 @@
 
 This guide is written for faculty and staff who have not used GitHub, a command line, Codex, or Codex plugins before. You do not need to learn Git or write code. The setup uses a few commands that can be copied exactly.
 
-Allow 30–45 minutes the first time. Complete Parts 1–6 before the workshop if possible.
+Allow 30–45 minutes for software setup. Begin the BYU license request at least three business days before the workshop, then complete Parts 1–6 after approval.
 
 ## What You Are Installing
 
@@ -17,13 +17,34 @@ You do **not** need to clone the repository, understand Git branches, or write s
 
 ## Part 1: Confirm Accounts And Access
 
-### 1.1 ChatGPT/Codex access
+### 1.1 Request BYU ChatGPT Edu/Codex access
 
-You need a ChatGPT account that can use Codex. If your BYU unit provides a managed account, use that account and follow its data-handling requirements.
+BYU provides eligible CES faculty and staff access to ChatGPT Edu through its enterprise agreement with OpenAI. Licenses are shared across CES institutions, approval depends on availability, and the program is not available to students. For this workshop, use the BYU-provided ChatGPT Edu account as your Codex sign-in rather than purchasing a personal subscription.
 
-Open [chatgpt.com](https://chatgpt.com/) and verify that you can sign in. Do not share your password or multifactor-authentication code with Codex or another attendee.
+1. Open BYU's [Obtaining a ChatGPT Edu License](https://ai.byu.edu/obtaining-a-chatgpt-edu-license) page.
+2. Select **Apply for a ChatGPT Edu License** or open the [CES license registration form](https://cestech.org/chatgpt-edu-registration).
+3. Sign in with your institutional NetID or username.
+4. Briefly describe your intended use and the type of data you expect to use.
+5. Submit the form. BYU says applicants should receive a response within three business days.
+6. After approval, look for both the CES approval message and the OpenAI invitation. If only the CES message arrives, follow the alternate login steps on BYU's license page.
 
-### 1.2 GitHub access
+Read the [BYU ChatGPT Edu Data Guidelines](https://ai.byu.edu/chatgpt-edu-data-restrictions-page) before using institutional, student, research, or proposal information.
+
+### 1.2 Sign into the BYU account correctly
+
+After approval:
+
+1. Go to [chatgpt.com](https://chatgpt.com/). If another ChatGPT account is active, log out first.
+2. Select **Log in**.
+3. Enter `your-netid@byu.edu`, using the same NetID identity submitted on the registration form. BYU specifies that this is the NetID-based address, not an email alias.
+4. Do **not** select the Google, Microsoft, or Apple social-login buttons.
+5. Select **Church Educational System** when asked how to log in.
+6. Select Brigham Young University and complete BYU single sign-on.
+7. Confirm that the CES ChatGPT Edu workspace is available. Refresh the page if the confirmation does not appear immediately.
+
+Do not share your password or multifactor-authentication code with Codex or another attendee.
+
+### 1.3 GitHub access
 
 The plugin repository is currently private. You therefore need:
 
@@ -81,7 +102,7 @@ You should see a Codex version number. Next run:
 codex
 ```
 
-The first time Codex starts, choose **Sign in with ChatGPT** and complete the browser sign-in. Exit the interactive screen after sign-in if you wish; the exact exit shortcut is displayed in the interface.
+The first time Codex starts, choose **Sign in with ChatGPT** and use the approved BYU ChatGPT Edu account from Part 1. If another ChatGPT identity appears in the browser, sign out before continuing. Use `netid@byu.edu` and the **Church Educational System** SSO option as described above. Exit the interactive screen after sign-in if you wish; the exact exit shortcut is displayed in the interface.
 
 Verify the login:
 
@@ -308,6 +329,8 @@ Stop before clicking a consequential control. Software interfaces change. Ask Co
 ## Facilitator Pre-Workshop Checklist
 
 - [ ] Invite each attendee's correct GitHub username to the private repository.
+- [ ] Send the BYU ChatGPT Edu application link at least three business days before the workshop.
+- [ ] Ask attendees to confirm approval and CES workspace access before installing the plugin.
 - [ ] Ask attendees to complete Parts 1–7 before the workshop.
 - [ ] Verify installation from an account other than the repository owner's.
 - [ ] Prepare a synthetic Learning Suite example or a safe development shell.
