@@ -7,6 +7,8 @@ This portable Codex plugin provides two reusable workflows:
 
 The plugin contains no course IDs, student records, proposal content, passwords, cookies, or browser profiles. Each faculty member supplies their own files and authenticated browser session. BYU work should use the CES ChatGPT Edu identity and follow the current BYU ChatGPT Edu Data Guidelines; identifiable student data must be de-identified unless explicitly approved by the institutional AI Executive Committee.
 
+Version 0.2 adds an optional Codex CLI browser foundation. It launches an isolated Chrome profile on localhost and supports browser status, page listing, and structural read-only probes. CLI mode does not yet apply live changes.
+
 ## Design
 
 Both workflows use the same safety pattern:

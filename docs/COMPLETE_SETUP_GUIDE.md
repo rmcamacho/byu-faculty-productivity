@@ -8,11 +8,11 @@ Allow 30–45 minutes for software setup. Begin the BYU license request at least
 
 You will install:
 
-1. **Codex CLI**, used to install the private department plugin.
+1. **Codex CLI**, used to install the private department plugin and optionally run the read-only CLI browser workflow.
 2. **The ChatGPT desktop app**, used for the hands-on browser workflow.
 3. **GitHub CLI**, a small utility that gives Codex permission to download the department's private plugin repository.
 4. **BYU Faculty Productivity**, the plugin containing the Learning Suite and Kuali skills.
-5. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage.
+5. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage. The desktop path supports interactive work; the optional CLI path is read-only in version 0.2.
 
 You do **not** need to clone the repository, understand Git branches, or write software.
 
@@ -127,13 +127,13 @@ codex doctor --summary
 
 ### Install the ChatGPT desktop app
 
-The command-line interface is useful for installing and verifying the private plugin. The tested path for controlling an authenticated Chrome window is the **ChatGPT desktop app**.
+The **ChatGPT desktop app** is the recommended beginner path and is required for the tutorial's interactive browser exercises. Version 0.2 also offers an optional, read-only CLI browser path described in Part 6.
 
 1. Follow the [official desktop app instructions](https://learn.chatgpt.com/docs/app) and install the app for your operating system.
 2. Open the app and sign in with the approved BYU CES ChatGPT Edu account.
 3. Select **Codex** when starting the tutorial workflow.
 
-For this workshop, do not plan on using Codex CLI for the live browser exercise. The CLI can install the marketplace and run the read-only skill verification, but the authenticated Chrome workflow has been pilot-tested in the desktop app.
+For this workshop, use the desktop app when an exercise requires clicking, typing, or saving. Use the CLI browser mode only for the read-only inspection exercise.
 
 ## Part 4: Install And Sign Into GitHub CLI
 
@@ -209,6 +209,13 @@ Codex loads newly installed plugin skills only in a **new** chat or CLI session.
 
 The Learning Suite and Kuali workflows need an authenticated browser only when you ask Codex to inspect or change a live site.
 
+Choose one of these modes:
+
+- **Desktop mode (recommended for beginners):** connects Codex to Chrome through the ChatGPT desktop app and supports the skill's carefully confirmed interactive workflow.
+- **CLI browser mode (optional, version 0.2):** launches a separate Chrome profile that Codex CLI can list and inspect structurally. It cannot navigate, click, type, submit, or make live changes.
+
+### Option A: Desktop mode
+
 There are two different components:
 
 - **BYU Faculty Productivity** supplies the Learning Suite and Kuali instructions. You installed it with Codex CLI in Part 5.
@@ -233,6 +240,46 @@ If Chrome is not detected, first confirm that the in-app Browser can open a nons
 Never paste a BYU password, Duo code, browser cookie, recovery code, or API token into a prompt. Codex should work through the already authenticated browser session.
 
 If Chrome browser control is unavailable, the skills can still help with local planning, documents, spreadsheets, and review. They must stop before live browser work.
+
+### Option B: CLI browser mode (read-only)
+
+This mode is useful for faculty who prefer Terminal or PowerShell. It does not require the ChatGPT Chrome extension, and it does not use your everyday Chrome profile.
+
+#### Install Node.js 22 or newer
+
+Download a current LTS release from the [official Node.js download page](https://nodejs.org/en/download), install it, close and reopen the command window, and verify:
+
+```text
+node --version
+```
+
+The major version must be `22` or higher.
+
+#### Let Codex start the dedicated browser
+
+Start `codex`, then enter:
+
+```text
+Use $byu-learning-suite in CLI browser mode. Check the prerequisites and start the dedicated Chrome session. Do not inspect any page until I confirm that it contains no protected data.
+```
+
+A separate Chrome window opens with its own BYU Faculty Productivity profile. Sign into the BYU service yourself, complete multifactor authentication, and navigate to a safe page. Do not paste passwords, Duo codes, cookies, or tokens into Codex.
+
+After checking that the page contains no student PII or other prohibited data, tell Codex:
+
+```text
+The page is safe for this exercise. List the available page titles and origins, then structurally probe the Learning Suite page. Do not navigate, click, type, or change anything.
+```
+
+The probe reports limited page structure such as headings, button labels, and element counts. It does not extract the full page, expose cookies, or make changes.
+
+When finished, enter:
+
+```text
+Stop the dedicated CLI Chrome session.
+```
+
+The local browser-control port is available only on your computer, but any process running on that computer could control the dedicated window while it is open. Close it promptly after use. Its persistent profile contains browser state; never copy that profile into GitHub, Box, a support bundle, or a prompt.
 
 ## Part 7: Run Read-Only Verification Tests
 
@@ -350,6 +397,15 @@ codex plugin marketplace upgrade byu-faculty-productivity
 - Start a new Codex conversation after installing a plugin.
 - Run the read-only open-tab-title test from Part 6.
 - Do not bypass BYU authentication or copy session cookies into Codex.
+
+### CLI browser mode does not start
+
+- Confirm `node --version` reports major version 22 or higher.
+- Confirm Google Chrome—not only another Chromium-based browser—is installed.
+- Start a new Codex CLI session after installing or updating the plugin.
+- Ask Codex to run the CLI browser status check before starting another session.
+- If port 9222 is already in use, ask Codex to use another local port for start, list, probe, and stop.
+- Never solve a connection problem by enabling remote debugging on your normal Chrome profile.
 
 ### A page or prompt does not match the tutorial
 

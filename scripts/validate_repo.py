@@ -67,7 +67,7 @@ def scan_portability(errors: list[str]) -> None:
         "fall2025_ls_snapshot": "course snapshot filename",
         "spring2026_ls_snapshot": "course snapshot filename",
     }
-    text_extensions = {".json", ".md", ".py", ".yaml", ".yml"}
+    text_extensions = {".json", ".md", ".mjs", ".py", ".yaml", ".yml"}
     ignored_parts = {".git", "__pycache__"}
     for path in ROOT.rglob("*"):
         if not path.is_file() or path.suffix.lower() not in text_extensions:

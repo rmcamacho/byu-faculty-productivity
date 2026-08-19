@@ -24,12 +24,20 @@ codex plugin add byu-faculty-productivity@byu-faculty-productivity
 
 Start a new Codex conversation after installation so the skills are discovered.
 
+## Browser Modes
+
+- The ChatGPT desktop app is the recommended beginner path and supports carefully confirmed interactive browser work.
+- Plugin version 0.2 adds an optional Codex CLI mode that launches a dedicated Chrome profile and supports only status, page listing, and structural read-only probing.
+
+CLI browser mode requires Node.js 22 or newer and Google Chrome. It does not require the ChatGPT Chrome extension. See [Part 6 of the Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md#part-6-prepare-browser-access).
+
 ## Test A Local Clone
 
 From the repository root:
 
 ```text
 python scripts/validate_repo.py
+node --test tests/cli_tools.test.mjs
 codex plugin marketplace add .
 codex plugin add byu-faculty-productivity@byu-faculty-productivity
 ```
@@ -51,7 +59,9 @@ Use $byu-kuali-proposals to inventory this proposal folder and build a complianc
 ```text
 .agents/plugins/marketplace.json       Codex marketplace catalog
 plugins/byu-faculty-productivity/      Installable plugin
+  scripts/                             Optional read-only CLI browser tools
 scripts/validate_repo.py               Cross-platform validation
+tests/                                 Cross-platform CLI tool tests
 ci/github-actions-validate.yml.example Windows, macOS, and Linux CI template
 ```
 

@@ -29,6 +29,8 @@ Keep proposal content, budgets, upload files, and the live Kuali record synchron
 
 For any live Kuali work, read [references/kuali-live-updates.md](references/kuali-live-updates.md). Obtain explicit confirmation immediately before changing a live record, replacing an attachment, certifying, routing, or submitting.
 
+When the user asks to work from Codex CLI, read [CLI Browser Mode](../../references/cli-browser.md). Version 0.2 CLI mode may start the dedicated browser and perform a structural read-only probe, but it must not change the Kuali record.
+
 For workspace structure and handoff state, read [references/proposal-workspace.md](references/proposal-workspace.md).
 
 ## Boundaries
