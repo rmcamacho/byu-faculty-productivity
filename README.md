@@ -6,6 +6,8 @@ This is a community-maintained productivity aid unless and until it is formally 
 
 New to GitHub or Codex? Start with the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md).
 
+Prefer VS Code? See [Using BYU Faculty Productivity From VS Code](docs/VSCODE_WORKFLOW.md).
+
 ## Included Skills
 
 - `$byu-learning-suite` helps inspect, plan, copy, configure, and safely update a Learning Suite course.
@@ -30,6 +32,10 @@ Start a new Codex conversation after installation so the skills are discovered.
 - Plugin version 0.2 adds an optional Codex CLI mode that launches a dedicated Chrome profile and supports only status, page listing, and structural read-only probing.
 
 CLI browser mode requires Node.js 22 or newer and Google Chrome. It does not require the ChatGPT Chrome extension. See [Part 6 of the Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md#part-6-prepare-browser-access).
+
+## VS Code
+
+Run Codex CLI in VS Code's integrated terminal to use this plugin. OpenAI's current IDE extension does not load plugins, although the Codex sidebar remains useful for ordinary file work. The [VS Code workflow guide](docs/VSCODE_WORKFLOW.md) includes setup, verification, prompt examples, and the current browser-write limitation.
 
 ## Test A Local Clone
 

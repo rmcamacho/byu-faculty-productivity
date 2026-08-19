@@ -9,6 +9,8 @@ The plugin contains no course IDs, student records, proposal content, passwords,
 
 Version 0.2 adds an optional Codex CLI browser foundation. It launches an isolated Chrome profile on localhost and supports browser status, page listing, and structural read-only probes. CLI mode does not yet apply live changes.
 
+VS Code users should run Codex CLI in the integrated terminal for these plugin workflows. The Codex IDE sidebar does not currently support plugins. Natural-language requests are encouraged, but the preview-confirm-write-verification pattern still applies.
+
 ## Design
 
 Both workflows use the same safety pattern:
@@ -32,6 +34,7 @@ Both workflows use the same safety pattern:
 
 - “Use `$byu-learning-suite` to compare my prior course with the new shell and draft a setup plan. Do not change anything yet.”
 - “Use `$byu-learning-suite` to review these proposed due dates against the term calendar, preview the changes, and wait for confirmation before saving.”
+- “Use `$byu-learning-suite`. In this course, change Quiz 5's due date to October 14, 2026. Show the current and proposed values, wait for my confirmation before saving, and then verify the saved date.”
 - “Use `$byu-kuali-proposals` to read this solicitation and build a compliance matrix and proposal workspace.”
 - “Use `$byu-kuali-proposals` to compare my local upload files with this Kuali record. Preview any needed replacements but do not apply them yet.”
 

@@ -13,6 +13,7 @@ You will install:
 3. **GitHub CLI**, a small utility that gives Codex permission to download the department's private plugin repository.
 4. **BYU Faculty Productivity**, the plugin containing the Learning Suite and Kuali skills.
 5. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage. The desktop path supports interactive work; the optional CLI path is read-only in version 0.2.
+6. **Visual Studio Code (optional)**, for faculty who want files, a terminal, and Codex in one window.
 
 You do **not** need to clone the repository, understand Git branches, or write software.
 
@@ -135,6 +136,15 @@ The **ChatGPT desktop app** is the recommended beginner path and is required for
 
 For this workshop, use the desktop app when an exercise requires clicking, typing, or saving. Use the CLI browser mode only for the read-only inspection exercise.
 
+### Optional: Install Codex in VS Code
+
+1. Install [Visual Studio Code](https://code.visualstudio.com/Download).
+2. Open **Extensions** and install **Codex – OpenAI's coding agent**, published by OpenAI.
+3. Open the Codex sidebar from its icon. If the icon is hidden, open the Command Palette and run **Codex: Open Codex Sidebar**.
+4. Sign in with the approved BYU CES ChatGPT Edu identity.
+
+The Codex IDE sidebar does not currently support plugins. To use `$byu-learning-suite` or `$byu-kuali-proposals` from VS Code, choose **Terminal → New Terminal**, run `codex`, and enter prompts in that integrated-terminal CLI session. See the complete [VS Code Workflow](VSCODE_WORKFLOW.md).
+
 ## Part 4: Install And Sign Into GitHub CLI
 
 GitHub CLI is required only because the repository is private. It securely supplies your GitHub authorization when Codex downloads the plugin.
@@ -213,6 +223,8 @@ Choose one of these modes:
 
 - **Desktop mode (recommended for beginners):** connects Codex to Chrome through the ChatGPT desktop app and supports the skill's carefully confirmed interactive workflow.
 - **CLI browser mode (optional, version 0.2):** launches a separate Chrome profile that Codex CLI can list and inspect structurally. It cannot navigate, click, type, submit, or make live changes.
+
+VS Code's integrated terminal uses the same CLI browser mode. The editor does not change its read-only limitation.
 
 ### Option A: Desktop mode
 
@@ -386,6 +398,7 @@ codex plugin marketplace upgrade byu-faculty-productivity
 - Confirm `codex plugin list` shows it as `installed, enabled`.
 - Start a completely new Codex chat or CLI session.
 - Make sure the skill name includes the leading dollar sign when invoking it explicitly.
+- If you are in the VS Code Codex sidebar, move to **Terminal → New Terminal** and run `codex`; the IDE extension does not currently support plugins.
 
 ### Browser control cannot see the signed-in page
 
