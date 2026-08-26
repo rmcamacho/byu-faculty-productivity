@@ -11,7 +11,7 @@ OpenAI's current documentation says the IDE extension does not support plugins. 
 
 ## One-Time Setup
 
-1. Complete Parts 1–5 of the [Complete Setup Guide](COMPLETE_SETUP_GUIDE.md). This installs Codex CLI, GitHub CLI, and the department plugin.
+1. Complete Parts 1–5 of the [Complete Setup Guide](COMPLETE_SETUP_GUIDE.md). This installs Codex CLI and the department plugin. No GitHub account or GitHub CLI is required.
 2. Install [Visual Studio Code](https://code.visualstudio.com/Download).
 3. In VS Code, open **Extensions** and install **Codex – OpenAI's coding agent**, published by OpenAI. The official installation link is available in the [OpenAI Codex IDE documentation](https://learn.chatgpt.com/docs/codex/ide).
 4. Select the Codex icon. If it is hidden, open the Command Palette and run **Codex: Open Codex Sidebar**.

@@ -8,12 +8,11 @@ Allow 30–45 minutes for software setup. Begin the BYU license request at least
 
 You will install:
 
-1. **Codex CLI**, used to install the private department plugin and run preview-confirm-apply browser workflows.
+1. **Codex CLI**, used to install the department plugin and run preview-confirm-apply browser workflows.
 2. **The ChatGPT desktop app**, used for the hands-on browser workflow.
-3. **GitHub CLI**, a small utility that gives Codex permission to download the department's private plugin repository.
-4. **BYU Faculty Productivity**, the plugin containing the Learning Suite and Kuali skills.
-5. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage. The CLI path uses a dedicated profile, preview-first task scripts, and explicit confirmation before writes.
-6. **Visual Studio Code (optional)**, for faculty who want files, a terminal, and Codex in one window.
+3. **BYU Faculty Productivity**, the plugin containing the Learning Suite and Kuali skills.
+4. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage. The CLI path uses a dedicated profile, preview-first task scripts, and explicit confirmation before writes.
+5. **Visual Studio Code (optional)**, for faculty who want files, a terminal, and Codex in one window.
 
 You do **not** need to clone the repository, understand Git branches, or write software.
 
@@ -73,21 +72,15 @@ CES describes the initial tier as a starting point rather than necessarily a per
 
 Use advanced capabilities when they add meaningful value. A credit limit is a capacity issue, not a reason to switch BYU work to a personal ChatGPT account or bypass institutional data rules.
 
-### 1.4 GitHub access
+### 1.4 Public repository access
 
-The plugin repository is currently private. You therefore need:
-
-- a free GitHub account;
-- a verified email address;
-- an invitation to `rmcamacho/byu-faculty-productivity`.
-
-If you need an account, follow GitHub's [account creation instructions](https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github). Enable two-factor authentication and save the recovery codes somewhere secure.
-
-After receiving the repository invitation, sign into GitHub in a browser and open:
+The plugin is published at:
 
 <https://github.com/rmcamacho/byu-faculty-productivity>
 
-If the page says “Not Found,” stop and ask the workshop facilitator to confirm your GitHub username and repository access.
+The repository is public. You do not need a GitHub account, repository invitation, GitHub Desktop, or GitHub CLI to install the plugin. A GitHub account is useful only if you want to report an issue, contribute a change, or follow repository updates.
+
+Opening the link in a private or signed-out browser window is a simple way to confirm public access.
 
 ## Part 2: Open A Command Window
 
@@ -164,51 +157,19 @@ For this workshop, either the desktop app or the version 0.3 CLI browser workflo
 
 The Codex IDE sidebar does not currently support plugins. To use `$byu-learning-suite` or `$byu-kuali-proposals` from VS Code, choose **Terminal → New Terminal**, run `codex`, and enter prompts in that integrated-terminal CLI session. See the complete [VS Code Workflow](VSCODE_WORKFLOW.md).
 
-## Part 4: Install And Sign Into GitHub CLI
+## Part 4: Confirm The Public Download
 
-GitHub CLI is required only because the repository is private. It securely supplies your GitHub authorization when Codex downloads the plugin.
+Open the public repository in a browser:
 
-Use the installer for your operating system from the [GitHub CLI installation page](https://github.com/cli/cli#installation).
+<https://github.com/rmcamacho/byu-faculty-productivity>
 
-Common options include:
+You should see the project README without signing into GitHub. That is all the GitHub access required for installation. Continue to Part 5 in the same Terminal or PowerShell window you used for Codex.
 
-- **Windows with WinGet:** `winget install --id GitHub.cli`
-- **macOS with Homebrew:** `brew install gh`
-- **Linux:** use the distribution-specific instructions on the installation page.
-
-Close and reopen the command window, then verify:
-
-```text
-gh --version
-```
-
-Sign in:
-
-```text
-gh auth login
-```
-
-Choose:
-
-1. `GitHub.com`;
-2. `HTTPS` for the Git protocol;
-3. browser-based authentication when offered;
-4. `Yes` when asked whether GitHub CLI should authenticate Git operations.
-
-GitHub documents this flow in its [GitHub CLI quickstart](https://docs.github.com/en/github-cli/github-cli/quickstart).
-
-Verify both authentication and repository access:
-
-```text
-gh auth status
-gh repo view rmcamacho/byu-faculty-productivity
-```
-
-The second command should display the repository description rather than “not found.”
+GitHub CLI is optional and is needed only by contributors who plan to work with branches or pull requests.
 
 ## Part 5: Install The Department Plugin
 
-Add the private GitHub repository as a Codex marketplace:
+Add the public GitHub repository as a Codex marketplace:
 
 ```text
 codex plugin marketplace add rmcamacho/byu-faculty-productivity --ref main
@@ -395,22 +356,12 @@ Start a new Codex conversation after an update.
 - Run `codex --version` again.
 - If it still fails, rerun the official installer for your operating system.
 
-### `gh` is not recognized or not found
+### Public repository or marketplace is unavailable
 
-- Close and reopen Terminal or PowerShell.
-- Confirm that GitHub CLI—not only GitHub Desktop—was installed.
-- Revisit the [GitHub CLI installation page](https://github.com/cli/cli#installation).
-
-### Repository not found
-
-Run:
-
-```text
-gh auth status
-gh repo view rmcamacho/byu-faculty-productivity
-```
-
-Common causes are a missing repository invitation, signing into the wrong GitHub account, or not completing browser authorization. If multiple GitHub accounts are configured, use `gh auth switch`.
+- Open <https://github.com/rmcamacho/byu-faculty-productivity> in a signed-out or private browser window.
+- If GitHub itself is unavailable on the network, retry from another approved network or later.
+- Check the marketplace command for spelling and preserve `--ref main`.
+- A GitHub login or repository invitation should not be requested. If one is, stop and report the exact command and message to the facilitator.
 
 ### Marketplace already exists
 
@@ -479,7 +430,7 @@ Stop before clicking a consequential control. Software interfaces change. Ask Co
 
 ## Facilitator Pre-Workshop Checklist
 
-- [ ] Invite each attendee's correct GitHub username to the private repository.
+- [ ] Send attendees the public [Start Here](../START_HERE.md) link.
 - [ ] Send the BYU ChatGPT Edu application link at least three business days before the workshop.
 - [ ] Ask attendees to confirm approval and CES workspace access before installing the plugin.
 - [ ] Ask attendees to open **Profile → Settings → Usage** and become familiar with their assigned capacity before the workshop.
@@ -490,4 +441,4 @@ Stop before clicking a consequential control. Software interfaces change. Ask Co
 - [ ] Prepare a synthetic solicitation, narrative, and budget for the Kuali exercise.
 - [ ] Do not schedule certification, routing, approval, submission, grade changes, or student-data work as beginner exercises.
 - [ ] Have at least one helper available for Windows and one for macOS/Linux setup.
-- [ ] Decide whether the repository should remain private or become public before broader distribution.
+- [ ] Confirm that the repository and installation link still open in a signed-out browser window.
