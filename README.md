@@ -8,6 +8,8 @@ New to GitHub or Codex? Start with the [Complete Setup Guide](docs/COMPLETE_SETU
 
 Prefer VS Code? See [Using BYU Faculty Productivity From VS Code](docs/VSCODE_WORKFLOW.md).
 
+CES ChatGPT Edu assigns credit tiers for advanced capabilities, including agent workflows. Existing access continues, but users should monitor **ChatGPT → Profile → Settings → Usage** and follow the institutional process if legitimate work requires a temporary increase. See [Part 1 of the Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md#part-1-confirm-accounts-and-access).
+
 ## Included Skills
 
 - `$byu-learning-suite` helps inspect, plan, copy, configure, and safely update a Learning Suite course.

@@ -8,7 +8,7 @@ Allow 30–45 minutes for software setup. Begin the BYU license request at least
 
 You will install:
 
-1. **Codex CLI**, used to install the private department plugin and optionally run the read-only CLI browser workflow.
+1. **Codex CLI**, used to install the private department plugin and run preview-confirm-apply browser workflows.
 2. **The ChatGPT desktop app**, used for the hands-on browser workflow.
 3. **GitHub CLI**, a small utility that gives Codex permission to download the department's private plugin repository.
 4. **BYU Faculty Productivity**, the plugin containing the Learning Suite and Kuali skills.
@@ -21,7 +21,11 @@ You do **not** need to clone the repository, understand Git branches, or write s
 
 ### 1.1 Request BYU ChatGPT Edu/Codex access
 
-BYU provides eligible CES faculty and staff access to ChatGPT Edu through its enterprise agreement with OpenAI. Licenses are shared across CES institutions, approval depends on availability, and the program is not available to students. For this workshop, use the BYU-provided ChatGPT Edu account as your Codex sign-in rather than purchasing a personal subscription.
+BYU provides eligible CES faculty and staff access to ChatGPT Edu through its enterprise agreement with OpenAI. For this workshop, use the BYU-provided ChatGPT Edu account as your Codex sign-in rather than purchasing a personal subscription.
+
+On August 26, 2026, the CES AI Committee announced that ChatGPT Edu users would be assigned credit tiers based on recent usage. Existing accounts, conversations, and access continue, and no action is required for the initial assignment. The tier determines the capacity available for some advanced capabilities; it does not replace the access-request and sign-in steps below.
+
+Source: CES AI Committee email, “Your CES ChatGPT EDU Access is being updated,” August 26, 2026. Where this guide and a newer institutional notice differ, follow the newer CES or BYU guidance.
 
 1. Open BYU's [Obtaining a ChatGPT Edu License](https://ai.byu.edu/obtaining-a-chatgpt-edu-license) page.
 2. Select **Apply for a ChatGPT Edu License** or open the [CES license registration form](https://cestech.org/chatgpt-edu-registration).
@@ -54,7 +58,22 @@ After approval:
 
 Do not share your password or multifactor-authentication code with Codex or another attendee.
 
-### 1.3 GitHub access
+### 1.3 Understand and monitor CES credits
+
+Credits help CES allocate compute-intensive ChatGPT capabilities across faculty and staff. Everyday chat generally uses less capacity, while advanced work such as Deep Research, file and data analysis, image generation, and AI-agent workflows can use more. Codex workflows—including the Learning Suite and Kuali browser tasks in this tutorial—may count as advanced usage.
+
+To review your own usage:
+
+1. Open ChatGPT while signed into the CES workspace.
+2. Select your profile.
+3. Open **Settings → Usage**.
+4. Review your current allocation and usage periodically, especially before a hands-on workshop or a substantial agent workflow.
+
+CES describes the initial tier as a starting point rather than necessarily a permanent limit. If a legitimate work task is blocked by the assigned capacity, use the current institutional request process shown in ChatGPT or contact the campus ChatGPT administrators to request a temporary increase. Longer-term tier reviews may also be available when a role consistently requires more capacity. Approval and exact allocation are determined by CES or the institution; this guide cannot promise an increase.
+
+Use advanced capabilities when they add meaningful value. A credit limit is a capacity issue, not a reason to switch BYU work to a personal ChatGPT account or bypass institutional data rules.
+
+### 1.4 GitHub access
 
 The plugin repository is currently private. You therefore need:
 
@@ -134,7 +153,7 @@ The **ChatGPT desktop app** remains the simplest beginner path. Version 0.3 also
 2. Open the app and sign in with the approved BYU CES ChatGPT Edu account.
 3. Select **Codex** when starting the tutorial workflow.
 
-For this workshop, use the desktop app when an exercise requires clicking, typing, or saving. Use the CLI browser mode only for the read-only inspection exercise.
+For this workshop, either the desktop app or the version 0.3 CLI browser workflow may be used for carefully reviewed interactive exercises. Always preview the exact action, confirm immediately before the write, and verify the saved result.
 
 ### Optional: Install Codex in VS Code
 
@@ -408,6 +427,14 @@ codex plugin marketplace upgrade byu-faculty-productivity
 - Make sure the skill name includes the leading dollar sign when invoking it explicitly.
 - If you are in the VS Code Codex sidebar, move to **Terminal → New Terminal** and run `codex`; the IDE extension does not currently support plugins.
 
+### Credits or advanced features are unavailable
+
+- In the CES ChatGPT workspace, open **Profile → Settings → Usage** and check the displayed allocation and usage.
+- Confirm that the CES workspace—not a personal workspace—is active.
+- If a legitimate BYU task is blocked by the available capacity, follow the current institutional request process or contact the campus ChatGPT administrators about a temporary increase.
+- Continue ordinary work with available standard capabilities when appropriate; do not move institutional data to a personal account to avoid a limit.
+- Credit tiers, rates, and request procedures may change. Follow the current CES notice and the information displayed in the workspace rather than relying on screenshots or numerical examples in older workshop materials.
+
 ### Browser control cannot see the signed-in page
 
 - Use Codex in the ChatGPT desktop app for this tutorial, not only the CLI or ChatGPT website.
@@ -455,6 +482,8 @@ Stop before clicking a consequential control. Software interfaces change. Ask Co
 - [ ] Invite each attendee's correct GitHub username to the private repository.
 - [ ] Send the BYU ChatGPT Edu application link at least three business days before the workshop.
 - [ ] Ask attendees to confirm approval and CES workspace access before installing the plugin.
+- [ ] Ask attendees to open **Profile → Settings → Usage** and become familiar with their assigned capacity before the workshop.
+- [ ] Identify the current campus contact or request process for legitimate temporary credit increases.
 - [ ] Ask attendees to complete Parts 1–7 before the workshop.
 - [ ] Verify installation from an account other than the repository owner's.
 - [ ] Prepare a synthetic Learning Suite example or a safe development shell.
