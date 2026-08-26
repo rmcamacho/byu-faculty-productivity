@@ -23,6 +23,8 @@ The extension and the integrated-terminal CLI should both use the BYU CES identi
 codex login status
 ```
 
+CES ChatGPT Edu now uses credit tiers for some advanced capabilities. Agent workflows such as these may use more capacity than ordinary chat. Before a substantial session, review **ChatGPT → Profile → Settings → Usage**. If legitimate work is blocked by the available capacity, follow the current institutional process for requesting a temporary increase; do not switch BYU work to a personal account.
+
 ## Open A Safe Workspace
 
 Create a local folder for the course or proposal, then choose **File → Open Folder** in VS Code. Keep this folder free of rosters, grades, accommodations, student identifiers, credentials, browser profiles, and restricted proposal data.
