@@ -4,7 +4,7 @@ Portable Codex workflows for BYU Learning Suite course administration and Kuali 
 
 This is a community-maintained productivity aid unless and until it is formally adopted by BYU or a BYU unit. It does not replace university policy, sponsored-project guidance, accessibility requirements, or instructor review.
 
-New to GitHub or Codex? Start with the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md).
+New to GitHub or Codex? Begin with [Start Here](START_HERE.md), then use the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md) if you need detailed instructions or troubleshooting.
 
 Prefer VS Code? See [Using BYU Faculty Productivity From VS Code](docs/VSCODE_WORKFLOW.md).
 
@@ -19,7 +19,7 @@ Neither skill contains credentials, course identifiers, student records, proposa
 
 ## Install From GitHub
 
-With access to this private repository, add it directly as a Codex marketplace:
+Add this public repository directly as a Codex marketplace. A GitHub account or repository invitation is not required:
 
 ```text
 codex plugin marketplace add rmcamacho/byu-faculty-productivity --ref main
@@ -77,12 +77,11 @@ ci/github-actions-validate.yml.example Windows, macOS, and Linux CI template
 
 Do not commit live snapshots, rosters, grades, accommodations, proposal drafts, budgets, credentials, cookies, or browser-profile data. Use synthetic examples for demonstrations and issues.
 
-## Publishing Checklist
+## Public Repository Maintenance
 
-1. Choose a GitHub owner, repository name, visibility, and license.
-2. Run `python scripts/validate_repo.py`.
-3. Review the staged file list for institutional or personal data.
-4. Publish the repository.
-5. Test the GitHub installation commands in a clean Codex environment.
+1. Run `python scripts/validate_repo.py` and `node --test tests/cli_tools.test.mjs` before each release.
+2. Review the staged file list and reachable Git history for institutional, personal, or secret data.
+3. Test the public installation commands without repository-owner credentials.
+4. Confirm an appropriate license with BYU before granting broader reuse or redistribution rights. Public visibility alone does not create an open-source license.
 
 To enable GitHub Actions, copy `ci/github-actions-validate.yml.example` to `.github/workflows/validate.yml`. The publishing credential must have permission to create workflow files.
