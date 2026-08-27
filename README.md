@@ -1,16 +1,32 @@
-# BYU Faculty Productivity Codex Plugin
+# BYU Faculty AI Productivity Tutorial
 
-Portable Codex workflows for BYU Learning Suite course administration and Kuali proposal development. The repository is a Codex plugin marketplace and works from the Codex CLI on macOS, Windows, and Linux.
+Hands-on materials for BYU faculty learning to use Codex for administrative analysis, course design, Google Slides, homework development, grant opportunities, Learning Suite, and Kuali.
+
+> **New here? Start with the [Self-Guided One-Hour Tutorial](tutorial_materials/SELF_GUIDED_TUTORIAL.md).** It includes setup links, exact prompts, synthetic practice files, answer checkpoints, safety guidance, and fallbacks. No GitHub account or Git experience is required.
+
+## Choose Your Path
+
+- **Work through the tutorial independently:** [Self-Guided One-Hour Tutorial](tutorial_materials/SELF_GUIDED_TUTORIAL.md)
+- **Prepare for a live department session:** [Participant Handout and Schedule](tutorial_materials/README.md)
+- **Set up Codex for the first time:** [Start Here](START_HERE.md), followed by the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md) if needed
+- **Use Google Slides:** [Google Drive Connector Setup](docs/GOOGLE_DRIVE_CONNECTOR_SETUP.md)
+- **Use VS Code:** [VS Code Workflow](docs/VSCODE_WORKFLOW.md)
+- **Install only the Learning Suite and Kuali tools:** continue to [Install From GitHub](#install-from-github)
+
+## What Is Included
+
+The tutorial includes complete synthetic workspaces for:
+
+- reconciling department and college documents about BYU's General Education redesign;
+- applying ideas from Elder Gong's University Conference address to an ECEn 240/301 op-amp unit;
+- inspecting a Google Slides deck and safely editing a copy;
+- auditing technical solutions and creating additional homework;
+- defining a faculty research direction, checking a funding opportunity, and drafting a proposal concept;
+- previewing natural-language Learning Suite and Kuali workflows.
+
+The repository is also a portable Codex plugin marketplace for BYU Learning Suite course administration and Kuali proposal development. It works from Codex CLI on macOS, Windows, and Linux.
 
 This is a community-maintained productivity aid unless and until it is formally adopted by BYU or a BYU unit. It does not replace university policy, sponsored-project guidance, accessibility requirements, or instructor review.
-
-New to GitHub or Codex? Begin with [Start Here](START_HERE.md), then use the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md) if you need detailed instructions or troubleshooting.
-
-Missed the live faculty session or prefer to work independently? Use the complete [Self-Guided ECEN Faculty AI Productivity Tutorial](tutorial_materials/SELF_GUIDED_TUTORIAL.md). It includes the schedule, exact prompts, answer checkpoints, safety boundaries, and fallbacks.
-
-Prefer VS Code? See [Using BYU Faculty Productivity From VS Code](docs/VSCODE_WORKFLOW.md).
-
-The faculty tutorial also includes a hands-on Google Slides connector exercise. Complete the [Google Drive Connector Setup](docs/GOOGLE_DRIVE_CONNECTOR_SETUP.md) before that exercise; the Google Drive plugin supplies access to Drive, Docs, Sheets, and Slides.
 
 CES ChatGPT Edu assigns credit tiers for advanced capabilities, including agent workflows. Existing access continues, but users should monitor **ChatGPT → Profile → Settings → Usage** and follow the institutional process if legitimate work requires a temporary increase. See [Part 1 of the Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md#part-1-confirm-accounts-and-access).
 
