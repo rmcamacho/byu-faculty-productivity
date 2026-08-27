@@ -4,6 +4,8 @@ This guide is written for faculty and staff who have not used GitHub, a command 
 
 Allow 30–45 minutes for software setup. Begin the BYU license request at least three business days before the workshop, then complete Parts 1–6 after approval.
 
+If you are working independently, complete the participant portions of this guide and then return to the [Self-Guided ECEN Faculty AI Productivity Tutorial](../tutorial_materials/SELF_GUIDED_TUTORIAL.md). Facilitator checklists near the end are optional for individual learners.
+
 ## What You Are Installing
 
 You will install:
@@ -13,6 +15,7 @@ You will install:
 3. **BYU Faculty Productivity**, the plugin containing the Learning Suite and Kuali skills.
 4. **Chrome browser control**, used only when you ask Codex to inspect or update an authenticated BYU webpage. The CLI path uses a dedicated profile, preview-first task scripts, and explicit confirmation before writes.
 5. **Visual Studio Code (optional)**, for faculty who want files, a terminal, and Codex in one window.
+6. **Google Drive plugin**, used for the hands-on Google Slides connector exercise. It connects separately to each participant's institutional Google account.
 
 You do **not** need to clone the repository, understand Git branches, or write software.
 
@@ -194,6 +197,20 @@ byu-faculty-productivity@byu-faculty-productivity  installed, enabled
 ```
 
 Codex loads newly installed plugin skills only in a **new** chat or CLI session. Close the current Codex conversation and start a new one before testing. This behavior is documented in the [official plugin guide](https://learn.chatgpt.com/docs/plugins).
+
+### Install Google Drive for the Slides exercise
+
+Google Slides access is supplied by the OpenAI-curated **Google Drive** plugin, which works across Drive, Docs, Sheets, and Slides. It is separate from the BYU Faculty Productivity plugin.
+
+Participants should install and test it before the workshop. Use the complete [Google Drive Connector Setup](GOOGLE_DRIVE_CONNECTOR_SETUP.md), including creation of a synthetic two-slide test deck and a read-only verification.
+
+Supported routes are:
+
+- **ChatGPT desktop app:** open **Plugins**, search for **Google Drive**, install it, and connect the institutional Google account when prompted.
+- **Codex CLI:** start `codex`, enter `/plugins`, select **Google Drive**, install or enable it, and follow the connection prompt.
+- **VS Code:** use `/plugins` from Codex CLI in **Terminal → New Terminal**. The Codex IDE sidebar does not support plugins.
+
+After installing or connecting Google Drive, start a new Codex chat or CLI session. If Google Drive is absent, disabled, or limited to read-only actions, do not switch to a personal ChatGPT account. The CES workspace administrator may control plugin availability and connector actions.
 
 ## Part 6: Prepare Browser Access
 
@@ -436,6 +453,8 @@ Stop before clicking a consequential control. Software interfaces change. Ask Co
 - [ ] Ask attendees to open **Profile → Settings → Usage** and become familiar with their assigned capacity before the workshop.
 - [ ] Identify the current campus contact or request process for legitimate temporary credit increases.
 - [ ] Ask attendees to complete Parts 1–7 before the workshop.
+- [ ] Ask attendees to complete the [Google Drive Connector Setup](GOOGLE_DRIVE_CONNECTOR_SETUP.md), including the synthetic read-only verification.
+- [ ] Confirm Google Drive plugin availability and permitted actions with a non-admin CES pilot account; prepare the local-file fallback if BYU restricts the connector or write actions.
 - [ ] Verify installation from an account other than the repository owner's.
 - [ ] Prepare a synthetic Learning Suite example or a safe development shell.
 - [ ] Prepare a synthetic solicitation, narrative, and budget for the Kuali exercise.

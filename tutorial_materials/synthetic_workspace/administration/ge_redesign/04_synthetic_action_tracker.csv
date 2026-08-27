@@ -1,0 +1,9 @@
+document_status,action,owner,due_date,status,dependency,notes
+SYNTHETIC,Send UNIV 106 questions to department chair,Undergraduate coordinator,2026-08-26,In progress,None,Draft not found in packet
+SYNTHETIC,Map ECEN outcomes to proposed GE outcomes,Assessment coordinator,2026-08-28,Not started,Course-level outcomes,Course-level outcomes do not yet exist
+SYNTHETIC,Estimate ECEN teaching capacity,Curriculum committee,2026-08-28,Draft complete,Workload assumptions,Impact analysis contains unresolved arithmetic
+SYNTHETIC,Recommend division of AI literacy between GE and ECEN,,2026-08-27,Not started,Faculty input,No owner assigned
+SYNTHETIC,Collect faculty preferences for working groups,Department administrator,2026-08-29,Not started,Faculty survey,Survey deadline is after the college response deadline
+SYNTHETIC,Approve department position,Department chair,2026-08-28,Not started,Committee review,College request says response is due August 27
+SYNTHETIC,Submit department response to college,Department chair,2026-08-29,Not started,Approved response,Date conflicts with both minutes and college request
+SYNTHETIC,Submit university comment,Fictional college committee,2026-08-31,Not started,Department responses,Official comment period closes August 31

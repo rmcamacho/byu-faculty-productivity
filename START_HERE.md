@@ -2,12 +2,15 @@
 
 This public Codex plugin helps BYU faculty use natural-language prompts for carefully reviewed Learning Suite and Kuali work. You do not need a GitHub account, GitHub Desktop, or GitHub CLI. Allow about 30–45 minutes for first-time setup.
 
+After setup, use either the live workshop materials or the [complete self-guided tutorial](tutorial_materials/SELF_GUIDED_TUTORIAL.md). The self-guided version takes about one hour and includes answer checks and fallbacks.
+
 ## Before You Begin
 
 1. Request BYU CES ChatGPT Edu access from [BYU's license page](https://ai.byu.edu/obtaining-a-chatgpt-edu-license). Begin at least three business days before you need it.
 2. Read the [BYU ChatGPT Edu Data Guidelines](https://ai.byu.edu/chatgpt-edu-data-restrictions-page).
 3. Use your approved CES account—not a personal ChatGPT account—for BYU teaching, student, research, or proposal work.
 4. Do not use real rosters, grades, accommodations, student identifiers, credentials, or restricted proposal data in a first test.
+5. For the Google Slides exercise, complete the [Google Drive Connector Setup](docs/GOOGLE_DRIVE_CONNECTOR_SETUP.md) and prepare its small synthetic test deck before beginning that section.
 
 ## Install Codex
 
@@ -60,5 +63,7 @@ Codex should describe an inspect, preview, confirm, apply, and verify process.
 - **Beginner:** use the ChatGPT desktop app and follow the browser setup in the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md#part-6-prepare-browser-access).
 - **VS Code:** run `codex` in VS Code's integrated terminal; the Codex sidebar does not currently load plugins. Follow the [VS Code Workflow](docs/VSCODE_WORKFLOW.md).
 - **Terminal or PowerShell:** install Node.js 22 or newer and use the plugin's dedicated CLI browser mode as described in the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md#option-b-cli-browser-mode).
+
+To use Google Slides from Codex, install the Google Drive plugin either in the ChatGPT desktop app or from `/plugins` in Codex CLI. The VS Code Codex sidebar does not support plugins; VS Code users should run `codex` in the integrated terminal. Follow the [Google Drive Connector Setup](docs/GOOGLE_DRIVE_CONNECTOR_SETUP.md).
 
 For troubleshooting, account guidance, CES credit information, browser setup, and workshop safety rules, use the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md).

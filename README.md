@@ -6,7 +6,11 @@ This is a community-maintained productivity aid unless and until it is formally 
 
 New to GitHub or Codex? Begin with [Start Here](START_HERE.md), then use the [Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md) if you need detailed instructions or troubleshooting.
 
+Missed the live faculty session or prefer to work independently? Use the complete [Self-Guided ECEN Faculty AI Productivity Tutorial](tutorial_materials/SELF_GUIDED_TUTORIAL.md). It includes the schedule, exact prompts, answer checkpoints, safety boundaries, and fallbacks.
+
 Prefer VS Code? See [Using BYU Faculty Productivity From VS Code](docs/VSCODE_WORKFLOW.md).
+
+The faculty tutorial also includes a hands-on Google Slides connector exercise. Complete the [Google Drive Connector Setup](docs/GOOGLE_DRIVE_CONNECTOR_SETUP.md) before that exercise; the Google Drive plugin supplies access to Drive, Docs, Sheets, and Slides.
 
 CES ChatGPT Edu assigns credit tiers for advanced capabilities, including agent workflows. Existing access continues, but users should monitor **ChatGPT → Profile → Settings → Usage** and follow the institutional process if legitimate work requires a temporary increase. See [Part 1 of the Complete Setup Guide](docs/COMPLETE_SETUP_GUIDE.md#part-1-confirm-accounts-and-access).
 
